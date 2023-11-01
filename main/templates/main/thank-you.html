@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+    <div class="content">
+
+        <div class="thankYouMessage">
+            {% comment %} <h1 class="xlTitle">Thank You!</h1> {% endcomment %}
+            <p class="mdTitle">{{ message }}</p>
+            <p> {{me.first_name}} will reach you out soon by your email <p>
+        </div>
+    </div>
+{% endblock %}

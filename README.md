@@ -9,6 +9,8 @@ on Windows:
 
 pip install -r requirements.txt
 
+# Configure Enviromental Variables in settings.py by adding .env
+
 python manage.py runserver
 
 On the browser go to :

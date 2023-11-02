@@ -31,6 +31,7 @@ END script blocks
 Start Content
 ================================= -->
 {% block content %}
+{% comment %}  Intro {% endcomment %}
 <section>
   <div class="bannerSection">
     <div class="container">
@@ -63,6 +64,8 @@ Start Content
   </div>
 </section>
 
+
+{% comment %} Skills {% endcomment %}
 <section>
   <div class="sectionSpace pt-0">
     <div class="container">
@@ -114,6 +117,7 @@ Start Content
   </div>
 </section>
 
+{% comment %} Certificates {% endcomment %}
 <section>
   <div class="sectionSpaceSm lightBg">
     <div class="container">
@@ -129,16 +133,18 @@ Start Content
             {% for c in certificates %}
             {% if c.is_active %}
             <div class="swiper-slide">
-              <div class="cardStyle1">
-                <h4 class="mdTitle cs1Title">
-                  <a href="{{ c.link }}"  target="_blank">{{c.title}}</a>
-                </h4>
-                <ul class="cardOptionCol">
-                  <li>{{c.date.date}}</li>
-                  <li>{{c.name|title}}</li>
-                </ul>
-                <p>{{c.description}}</p>
-              </div>
+              <a href="{{ c.link }}"  target="_blank">
+                <div class="cardStyle1">
+                  <h4 class="mdTitle cs1Title">
+                    {{c.title}}
+                  </h4>
+                  <ul class="cardOptionCol">
+                    <li>{{c.date.date}}</li>
+                    <li>{{c.name|title}}</li>
+                  </ul>
+                  <p>{{c.description}}</p>
+                </div>
+              </a>
             </div>
             {% endif %}
             {% endfor %}
@@ -153,13 +159,14 @@ Start Content
   </div>
 </section>
 
+{% comment %}  Projects and Testimonials {% endcomment %}
 <section>
   <div class="sectionSpace">
     <div class="container">
       <div class="portfolioCol">
         <div class="row pb-3">
           <div class="col">
-            <h4 class="smText regular">Featured Work</h4>
+            <h4 class="smText regular">Projects</h4>
           </div>
           <div class="col-auto">
             <a href="{% url 'main:portfolios' %}" class="simpleLink">View all</a>
@@ -228,12 +235,13 @@ Start Content
   </div>
 </section>
 
+{% comment %} WORK EXP {% endcomment %}
 <section>
   <div class="sectionSpaceSm lightBg">
     <div class="container">
       <div class="row pb-3">
         <div class="col">
-          <h4 class="smText regular">Recent posts</h4>
+          <h4 class="smText regular">Work Exprerience</h4>
         </div>
         <div class="col-auto">
           <a href="{% url 'main:blogs' %}" class="simpleLink">View all</a>

@@ -31,8 +31,8 @@ class UserProfile(models.Model):
 
     @property
     def get_photo_url(self):
-        if self.photo and hasattr(self.photo, 'url'):
-            return self.photo.url
+        if self.avatar and hasattr(self.avatar, 'url'):
+            return self.avatar.url
         else:
             return "/static/images/user.jpg"
 

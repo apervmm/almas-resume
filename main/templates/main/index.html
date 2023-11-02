@@ -48,7 +48,8 @@ Start Content
             <div class="bannerBtnCol">
               <div class="row">
                 <div class="col-auto">
-                  <a download href="{{me.userprofile.cv.url}}" class="btn btnPrimary">Download Resume</a>
+                  {% comment %} <a download href="{{me.userprofile.cv.url}}" class="btn btnPrimary">Download Resume</a> {% endcomment %}
+                  <a download href="{{me.userprofile.get_cv_url}}" class="btn btnPrimary">Download Resume</a>
                 </div>
                 <div class="col-auto">
                   <a href="{% url 'main:contact' %}" class="btn btnOutline">Contact</a>

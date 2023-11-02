@@ -35,6 +35,13 @@ class UserProfile(models.Model):
             return self.avatar.url
         else:
             return "/static/images/user.jpg"
+    
+    @property
+    def get_cv_url(self):
+        if self.cv and hasattr(self.cv, 'url'):
+            return self.cv.url
+        else:
+            return "/static/images/cv.pdf"
 
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'

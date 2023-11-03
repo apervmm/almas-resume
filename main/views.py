@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from django.contrib import messages
-from django.shortcuts import render
-from django.contrib import messages
 from .models import UserProfile, Blog, Portfolio, Testimonial, Certificate, ContactProfile
 
 from django.views import generic
@@ -14,7 +12,8 @@ class IndexView(generic.TemplateView):
         testimonials = Testimonial.objects.filter(is_active=True)
         certificates = Certificate.objects.filter(is_active=True).order_by("-date")
         blogs = Blog.objects.filter(is_active=True)
-        portfolio = Portfolio.objects.filter(is_active=True)
+        portfolio = Portfolio.objects.filter(is_active=True).order_by("?")[:3]
+        
         
         context["testimonials"] = testimonials
         context["certificates"] = certificates

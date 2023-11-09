@@ -16,3 +16,9 @@ python manage.py runserver
 On the browser go to :
 
 http://127.0.0.1:8000/
+
+
+
+
+# RUN THE DEMO:
+https://almas-resume.vercel.app/
